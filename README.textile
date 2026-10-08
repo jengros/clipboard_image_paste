@@ -1,4 +1,8 @@
-h1. Redmine clipboard_image_paste plugin
+h1. Historical upstream documentation
+
+This file preserves the upstream authors and release history. Its old installation, compatibility and known issues sections do not describe this local 2.0.0 fork. Read "README.md":README.md and "VERIFICATION.md":VERIFICATION.md for the current Redmine 7.0.2 scope and results.
+
+h1. Redmine clipboard_image_paste plugin (upstream history)
 
 Paste (cropped) image from clipboard as an attachment.
 

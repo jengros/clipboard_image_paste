@@ -1,5 +1,9 @@
 # English strings go here
 en:
+  cbp_txt_unsupported: 'Clipboard image attachments are unavailable in this browser or form.'
+  cbp_txt_invalid_image: 'The image could not be decoded or converted. Copy and paste it again.'
+  cbp_txt_upload_failed: 'The image could not be attached. Please try again.'
+  cbp_txt_uploading: 'Uploading image…'
   cbp_txt_add_image      : 'Add picture from clipboard'
   cbp_txt_crop_box       : 'crop box:  x={1}  y={2}  width={3}  height={4}'
   cbp_txt_print          : 'Use PrintScreen key and then Ctrl+V.'

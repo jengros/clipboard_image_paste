@@ -9,34 +9,16 @@
 #*******************************************************************************
 
 require 'redmine'
-require 'dispatcher' unless Rails::VERSION::MAJOR >= 3
 
 Redmine::Plugin.register :clipboard_image_paste do
   name        'Clipboard image paste'
   author      'Richard Pecl'
-  description 'Paste cropped image from clipboard as attachment'
+  description 'Paste cropped clipboard images as attachments using the Redmine 7 upload API'
   url         'http://www.redmine.org/plugins/clipboard_image_paste'
-  version     '1.13'
-  requires_redmine :version_or_higher => '1.4.0'
-
-  configfile = File.join(File.dirname(__FILE__), 'config', 'settings.yml')
-  $clipboard_image_paste_config = YAML::load_file(configfile)
-
-  redmineVer = Redmine::VERSION.to_a
-  $clipboard_image_paste_has_jquery = redmineVer[0] > 2 || (redmineVer[0] == 2 && redmineVer[1] >= 2)
-  $clipboard_image_paste_remove_alpha = redmineVer[0] < 2 || (redmineVer[0] == 2 && redmineVer[1] <= 5)
+  version     '2.0.0'
+  requires_redmine :version_or_higher => '7.0.2'
 end
 
-
-if Rails::VERSION::MAJOR >= 3
-  dispatcher = Rails.version < '5.1' ? ActionDispatch::Callbacks : ActiveSupport::Reloader
-  dispatcher.to_prepare do
-    # require_dependency 'clipboard_image_paste/hooks'
-    require_dependency 'clipboard_image_paste/attachment_patch'
-  end
-else
-  Dispatcher.to_prepare :clipboard_image_paste do
-    require_dependency 'clipboard_image_paste/hooks'
-    require_dependency 'clipboard_image_paste/attachment_patch'
-  end
-end
+# Redmine's PluginLoader already runs this initializer inside Rails to_prepare.
+# Keep the view hook in a Zeitwerk-compatible namespace; no model/controller patches.
+ClipboardImagePaste::Hooks

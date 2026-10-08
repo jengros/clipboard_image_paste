@@ -1,5 +1,9 @@
 # Korean strings go here
 ko:
+  cbp_txt_unsupported: '이 브라우저나 화면에서는 클립보드 이미지 첨부를 사용할 수 없습니다.'
+  cbp_txt_invalid_image: '이미지를 읽거나 변환할 수 없습니다. 다시 복사해서 붙여넣으세요.'
+  cbp_txt_upload_failed: '이미지 첨부에 실패했습니다. 다시 시도하세요.'
+  cbp_txt_uploading: '이미지 업로드 중…'
   cbp_txt_add_image      : '클립보드 이미지 추가'
   cbp_txt_crop_box       : '자를영역:  X={1}  Y={2}  넓이={3}  높이={4}'
   cbp_txt_print          : '키보드 우측 상단의 PrintScreen 키로 캡춰 또는 이미지 복사 후 Ctrl+V 로 붙여넣으세요.'

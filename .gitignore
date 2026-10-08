@@ -1,0 +1,6 @@
+/artifacts/
+/test/fixtures/
+/test/results/
+/dist/
+/node_modules/
+*.log

@@ -1,0 +1,11 @@
+*.rb text eol=lf
+*.js text eol=lf
+*.cjs text eol=lf
+*.css text eol=lf
+*.erb text eol=lf
+*.yml text eol=lf
+*.md text eol=lf
+*.ps1 text eol=lf
+*.textile text eol=lf
+COPYING text eol=lf
+*.py text eol=lf
